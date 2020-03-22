@@ -1,0 +1,13 @@
+:host{
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+
+}
+.keyboard {
+    grid-column: 2;
+    display: grid;
+    border: 1px solid gray;
+  }
+  

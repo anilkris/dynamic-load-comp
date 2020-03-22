@@ -9,12 +9,7 @@ import { distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
   selector: 'app-ad-banner',
-  template: `
-              <div class="ad-banner-example">
-                <h3>Advertisements</h3>
-                <ng-template ad-host></ng-template>
-              </div>
-            `
+  templateUrl: './ad-banner.component.html',
 })
 export class AdBannerComponent implements OnInit, OnDestroy {
   @Input()  adsObservable: Observable<AdItem[]>;

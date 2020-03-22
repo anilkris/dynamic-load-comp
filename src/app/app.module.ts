@@ -7,6 +7,8 @@ import { AdDirective } from './ad.directive';
 import { AdBannerComponent } from './ad-banner/ad-banner.component';
 import { HeoJobAdComponent } from './heo-job-ad/heo-job-ad.component';
 import { VkeyboardDirective } from './vkeyboard.directive';
+import { KeyboardComponent } from './keyboard/keyboard.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { VkeyboardDirective } from './vkeyboard.directive';
     AdDirective,
     AdBannerComponent,
     HeoJobAdComponent,
-    VkeyboardDirective
+    VkeyboardDirective,
+    KeyboardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

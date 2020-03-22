@@ -4,16 +4,12 @@ import { AdComponent } from './ad-component';
 import { AdItem } from './ad-item';
 import { HeoJobAdComponent } from './heo-job-ad/heo-job-ad.component';
 import { AdService } from './ad.service';
+import { KeyboardComponent } from './keyboard/keyboard.component';
 
 @Directive({
   selector: '[vkeyboard]'
 })
 export class VkeyboardDirective {
- adItem = new AdItem(HeoJobAdComponent, {
-        headline: 'Item3',
-        body: 'Submit now '
-    });
-
 
   currentAdIndex = -1;
   @ViewChild(AdDirective, { static: true }) adHost: AdDirective;
@@ -25,16 +21,20 @@ export class VkeyboardDirective {
 
   @HostListener('focus', ['$event'])
   openKeyboard() {
+   const  adItem = new AdItem(KeyboardComponent, {
+       elementRef: this.elementRef,
+        headline: 'Item3',
+        body: 'Submit now '
+    });
 
-    this.adService.pushAd(this.adItem);
-    this.elementRef.nativeElement.value = 'akshay';
+
+    this.adService.pushAd(adItem);
 
   }
 
   @HostListener('blur', ['$event'])
   private closeKeyboard() {
-    this.elementRef.nativeElement.value = '';
-    this.adService.deleteAd();
+   // this.adService.deleteAd();
   }
 
 

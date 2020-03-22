@@ -2,19 +2,22 @@ import { Component, OnInit, Input } from '@angular/core';
 import { AdComponent } from '../ad-component';
 
 @Component({
-  selector: 'app-heo-job-ad',
-  templateUrl: './heo-job-ad.component.html',
-  styleUrls: ['./heo-job-ad.component.scss']
+  selector: 'app-keyboard',
+  templateUrl: './keyboard.component.html',
+  styleUrls: ['./keyboard.component.scss']
 })
-export class HeoJobAdComponent implements AdComponent {
+export class KeyboardComponent implements OnInit, AdComponent {
 
-  constructor() { }
   @Input() data: any;
+  constructor() { }
+  ngOnInit(): void {
+  }
 
   onClick(event) {
 
     this.data.elementRef.nativeElement.value = 'akshay';
 
   }
+
 
 }
