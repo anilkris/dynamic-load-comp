@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AdItem } from './ad-item';
+import { HeoJobAdComponent } from './heo-job-ad/heo-job-ad.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'dynamic-load-comp';
+  ads: AdItem[];
+
+  constructor() {}
+
+  ngOnInit() {
+    this.ads = this.getAds();
+  }
+
+  getAds() {
+    return [
+      new AdItem(HeoJobAdComponent, {
+        headline: 'Hiring for several positions',
+        body: 'Submit your resume today!'
+      }),
+    ];
+  }
+
 }
