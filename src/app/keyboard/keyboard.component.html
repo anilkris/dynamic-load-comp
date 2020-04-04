@@ -1,4 +1,12 @@
 <div class="keyboard">
 
-  <button (click) = "onClick($event)">apply</button>
+  <div class="wrapper">
+
+    <button mat-raised-button *ngFor="let i of NUMBER_KEYS" id="key" (click) = "onClick($event)">{{i}}</button>
+    <button mat-raised-button *ngFor="let i of QWERTY_KEYS" id="key" (click) = "onClick($event)">{{i}}</button>
+    <button mat-raised-button *ngFor="let i of ASDF_KEYS" id="key" (click) = "onClick($event)">{{i}}</button>
+    <button mat-raised-button *ngFor="let i of ZXCV_KEYS" id="key" (click) = "onClick($event)">{{i}}</button>
+    <button class="space_key" mat-raised-button  id="key" (click) = "onClick($event)"></button>
+  </div>
+
 </div>
